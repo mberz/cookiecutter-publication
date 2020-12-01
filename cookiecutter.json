@@ -7,5 +7,6 @@
     "publication_slug": "year_where_shorttitle",
     "version": "D0",
     "code_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
-    "file_license": ["CC BY", "CC BY-SA", "CC BY-ND", "CC BY-NC", "CC BY-NC-SA", "CC BY-NC-ND"]
+    "file_license": ["CC BY", "CC BY-SA", "CC BY-ND", "CC BY-NC", "CC BY-NC-SA", "CC BY-NC-ND"],
+    "python_version": "3.8"
   }

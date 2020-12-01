@@ -1,0 +1,13 @@
+name: {{cookiecutter.publications_slug}}
+channels:
+  - defaults
+dependencies:
+  - pip
+  - pyflakes
+  - python={{cookiecutter.python_version}}
+  - scons
+  - flake8
+  - pip:
+    - "git+ssh://git@github.com/mberz/nbflow.git@b3b3729bf81d2ede6319ede5c118cdd52571dc8c#egg=nbflow"
+    - -e ./utils/
+prefix: ./env/{{cookiecutter.publications_slug}}

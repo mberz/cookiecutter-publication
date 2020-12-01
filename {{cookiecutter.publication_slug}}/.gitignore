@@ -1,0 +1,74 @@
+# os
+.DS_Store
+
+# vs code settings
+.vscode/
+
+# virtual environment
+env/
+
+# notebook tmp
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# SCons
+*.dblite
+
+# MATLAB
+*.asv
+
+# Latex
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.toc
+*.idx
+*.synctex.gz
+*.synctex(busy)
+*.glsdefs
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.ist
+*.acn
+*.acr
+*.alg
+*.sls
+*.slo
+*.slg
+*.xml
+*.mls
+*.mlo
+*.mlg
+*.bcf
+*.snm
+*.nav
+*.auxlock
+*.dvi
+*.ent
+manuscript.pdf
+
+# backup files
+*.bak

@@ -1,0 +1,11 @@
+{
+    "authors": "First Author",
+    "title": "Your Python Project",
+    "email": "author@example.com",
+    "git_service": ["https://github.com", "https://git.rwth-aachen.de", "git.crait.synology.me"],
+    "git_username": "author",
+    "publication_slug": "year_shorttitle",
+    "version": "D0",
+    "code_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
+    "file_license": ["CC BY", "CC BY-SA", "CC BY-ND", "CC BY-NC", "CC BY-NC-SA", "CC BY-NC-ND"]
+  }

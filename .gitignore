@@ -1,0 +1,39 @@
+# os
+.DS_Store
+
+# vs code settings
+.vscode/
+
+# virtual environment
+env/
+
+# notebook tmp
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# SCons
+*.dblite
+
+# MATLAB
+*.asv
+
+# backup files
+*.bak

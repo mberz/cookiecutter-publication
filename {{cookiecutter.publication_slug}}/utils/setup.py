@@ -64,7 +64,7 @@ setup(
     name='utils',
     version='{{cookiecutter.version}}',
     description='Package for utility functions and data path handling',
-    author='{{cookiecutter.authors}}',
+    author='{{cookiecutter.author}}',
     author_email='{{cookiecutter.email}}',
     packages=find_packages(),
     include_package_data=True,

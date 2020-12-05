@@ -1,6 +1,10 @@
 {
-    "authors": "First Author",
+    "author": "First Author",
+    "affiliation": "Random Institute",
     "title": "Your Publication",
+    "manuscript": true,
+    "presentation": true,
+    "publication_type": ["manuscript", "presentation", "both"],
     "email": "author@example.com",
     "git_service": ["https://github.com", "https://git.rwth-aachen.de", "git.crait.synology.me"],
     "git_username": "author",

@@ -14,7 +14,7 @@ def set_path_variables():
     root_dir = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
 
     activate = 'conda activate {}'.format(
-        os.path.join(root_dir, 'env', '2019_JASA_dedc_isotropy'))
+        os.path.join(root_dir, 'env', '{{cookiecutter.publication_slug}}'))
     return_code = subprocess.call(activate, shell=True)
     if return_code != 0:
         raise RuntimeError('Could not activate environment.')
@@ -79,8 +79,8 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
-    # cmdclass={
-    #     'install': CustomInstallCommand,
-    #     'develop': CustomDevelopCommand
-    # }
+    cmdclass={
+        'install': CustomInstallCommand,
+        'develop': CustomDevelopCommand
+    }
 )

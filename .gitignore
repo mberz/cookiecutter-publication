@@ -11,6 +11,7 @@ env/
 .ipynb_checkpoints/
 
 # Python
+.pytest_cache/
 __pycache__/
 .Python
 build/

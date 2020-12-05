@@ -1,0 +1,36 @@
+import os
+from nbflow.scons import setup
+
+# Environment including latex compiler from PATH variable
+env = Environment(ENV=os.environ)
+setup(env, ["process"], ARGUMENTS)
+
+{%- if cookiecutter.manuscript == "yes" -%}
+# Possible license content here
+
+basename = 'manuscript'
+manuscript = 'manuscript/' + basename + '.pdf'
+pdf = env.PDF(target=manuscript, source='manuscript/' + basename + '.tex')
+env.Depends(
+    manuscript,
+    [
+        'manuscript/includes/info.tex'
+        'manuscript/includes/colors.tex'
+    ]
+)
+
+# Enable SyncTeX
+env.AppendUnique(PDFLATEXARGS='-synctex=1 -interaction=batchmode')
+
+# Enable write18 or shell escape
+# This is required for tikz externalize and latex
+# rendering of inkscape plots
+env.AppendUnique(PDFLATEXARGS='--shell-escape')
+
+env.Clean(pdf, basename + '.synctex.gz')
+
+# Prevent Scons from deleting the target before rebuilding
+env.Precious(pdf)
+
+
+{% endif %}

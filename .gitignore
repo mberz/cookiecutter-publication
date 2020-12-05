@@ -37,3 +37,6 @@ wheels/
 
 # backup files
 *.bak
+
+# tmp check folder
+tmp_cookie/

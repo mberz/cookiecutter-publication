@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 
 from . import folders
+from . import plot
 
 __all__ = [
-    'folders'
+    'folders',
+    'plot'
 ]

@@ -1,4 +1,4 @@
-name: {{cookiecutter.publications_slug}}
+name: {{cookiecutter.publication_slug}}
 channels:
   - defaults
 dependencies:
@@ -10,4 +10,4 @@ dependencies:
   - pip:
     - "git+ssh://git@github.com/mberz/nbflow.git@b3b3729bf81d2ede6319ede5c118cdd52571dc8c#egg=nbflow"
     - -e ./utils/
-prefix: ./env/{{cookiecutter.publications_slug}}
+prefix: ./env/{{cookiecutter.publication_slug}}

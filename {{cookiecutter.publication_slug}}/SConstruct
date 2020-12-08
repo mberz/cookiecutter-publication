@@ -5,7 +5,7 @@ from nbflow.scons import setup
 env = Environment(ENV=os.environ)
 setup(env, ["process"], ARGUMENTS)
 
-{%- if cookiecutter.manuscript == "yes" -%}
+{%- if cookiecutter.manuscript != "n" -%}
 # Possible license content here
 
 basename = 'manuscript'

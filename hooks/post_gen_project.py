@@ -12,24 +12,32 @@ PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 def download_file(url, filename):
     """Download a file
     """
-    http = urllib3.PoolManager()
-    with open(filename, 'wb') as out:
-        r = http.request('GET', url, preload_content=False)
-        shutil.copyfileobj(r, out)
+    try:
+        http = urllib3.PoolManager()
+        with open(filename, 'wb') as out:
+            r = http.request('GET', url, preload_content=False)
+            shutil.copyfileobj(r, out)
+    except:
+        warnings.warn("Could not download the manuscript template")
+        return
 
 
 def download_and_extract(url, filename):
     """Download and extract the manuscript template
     """
-    http = urllib3.PoolManager()
-    with open(filename, 'wb') as out:
-        r = http.request('GET', url, preload_content=False)
-        shutil.copyfileobj(r, out)
+    try:
+        http = urllib3.PoolManager()
+        with open(filename, 'wb') as out:
+            r = http.request('GET', url, preload_content=False)
+            shutil.copyfileobj(r, out)
 
-    with zipfile.ZipFile(fname, 'r') as zip_ref:
-        fname_extract = os.path.join(
-            os.path.split(fname)[0], 'template')
-        zip_ref.extractall(fname_extract)
+        with zipfile.ZipFile(filename, 'r') as zip_ref:
+            fname_extract = os.path.join(
+                os.path.split(filename)[0], 'template')
+            zip_ref.extractall(fname_extract)
+    except:
+        warnings.warn("Could not download the manuscript template")
+        return
 
 
 def remove_file(filepath):
@@ -49,17 +57,14 @@ if __name__ == '__main__':
             PROJECT_DIRECTORY, 'manuscript'))
     else:
         if '{{ cookiecutter.manuscript }}' == 'JASA':
-            fname = os.path.join(PROJECT_DIRECTORY, 'manuscript', 'JASA.zip')
+            filename = os.path.join(PROJECT_DIRECTORY, 'manuscript', 'JASA.zip')
             url = 'https://acousticalsociety.org/wp-content/uploads/2018/02/JASA-LaTeX-v2019.zip'
 
-        if '{{ cookiecutter.manuscript }}' == 'JASA-EL':
-            fname = os.path.join(PROJECT_DIRECTORY, 'manuscript', 'JASA.zip')
+        elif '{{ cookiecutter.manuscript }}' == 'JASA-EL':
+            filename = os.path.join(PROJECT_DIRECTORY, 'manuscript', 'JASA-EL.zip')
             url = 'https://acousticalsociety.org/wp-content/uploads/2018/02/JASA-EL-LaTeX-v2019.zip'
 
-        try:
-            download_and_extract(url, fname)
-        except:
-            warnings.warn("Could not download the manuscript template")
+        download_and_extract(url, filename)
 
 
     if '{{ cookiecutter.presentation }}' != 'y':

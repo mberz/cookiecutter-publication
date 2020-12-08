@@ -51,6 +51,11 @@ if __name__ == '__main__':
         if '{{ cookiecutter.manuscript }}' == 'JASA':
             fname = os.path.join(PROJECT_DIRECTORY, 'manuscript', 'JASA.zip')
             url = 'https://acousticalsociety.org/wp-content/uploads/2018/02/JASA-LaTeX-v2019.zip'
+
+        if '{{ cookiecutter.manuscript }}' == 'JASA-EL':
+            fname = os.path.join(PROJECT_DIRECTORY, 'manuscript', 'JASA.zip')
+            url = 'https://acousticalsociety.org/wp-content/uploads/2018/02/JASA-EL-LaTeX-v2019.zip'
+
         try:
             download_and_extract(url, fname)
         except:

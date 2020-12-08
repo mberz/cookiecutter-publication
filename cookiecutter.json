@@ -2,7 +2,7 @@
     "author": "First Author",
     "affiliation": "Random Institute",
     "title": "Your Publication",
-    "manuscript": "y",
+    "manuscript": ["y", "n", "JASA", "JASA-EL"],
     "presentation": "y",
     "publication_type": ["manuscript", "presentation", "both"],
     "email": "author@example.com",

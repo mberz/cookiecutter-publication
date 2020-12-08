@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import warnings
 import os
 from os.path import split
 import shutil
@@ -46,11 +47,14 @@ if __name__ == '__main__':
             PROJECT_DIRECTORY, 'process', 'manuscript'))
         shutil.rmtree(os.path.join(
             PROJECT_DIRECTORY, 'manuscript'))
-    elif '{{ cookiecutter.manuscript }}' == 'JASA':
-        fname = os.path.join(PROJECT_DIRECTORY, 'manuscript', 'JASA.zip')
-        download_and_extract(
-            'https://acousticalsociety.org/wp-content/uploads/2018/02/JASA-LaTeX-v2019.zip',
-            fname)
+    else:
+        if '{{ cookiecutter.manuscript }}' == 'JASA':
+            fname = os.path.join(PROJECT_DIRECTORY, 'manuscript', 'JASA.zip')
+            url = 'https://acousticalsociety.org/wp-content/uploads/2018/02/JASA-LaTeX-v2019.zip'
+        try:
+            download_and_extract(url, fname)
+        except:
+            warnings.warn("Could not download the manuscript template")
 
 
     if '{{ cookiecutter.presentation }}' != 'y':

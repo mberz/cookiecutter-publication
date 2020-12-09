@@ -17,3 +17,6 @@ insert_final_newline = true
 [.json]
 indent_size = 2
 indent_style = space
+
+[*.{diff,patch}]
+trim_trailing_whitespace = false

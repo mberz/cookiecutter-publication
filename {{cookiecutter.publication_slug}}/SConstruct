@@ -14,8 +14,9 @@ pdf = env.PDF(target=manuscript, source='manuscript/' + basename + '.tex')
 env.Depends(
     manuscript,
     [
-        'manuscript/includes/info.tex'
-        'manuscript/includes/colors.tex'
+        'manuscript/includes/info.tex',
+        'manuscript/includes/colors.tex',
+        'manuscript/includes/packages.tex',
     ]
 )
 

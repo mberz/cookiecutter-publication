@@ -4,7 +4,6 @@
     "title": "Your Publication",
     "manuscript": ["Custom", "n", "JASA", "JASA-EL"],
     "presentation": "y",
-    "publication_type": ["manuscript", "presentation", "both"],
     "email": "author@example.com",
     "git_service": ["https://github.com", "https://git.rwth-aachen.de", "git.crait.synology.me"],
     "git_username": "author",

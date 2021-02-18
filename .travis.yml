@@ -7,7 +7,7 @@ python:
   - 3.5
 
 before_install:
-    - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
+    - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive
 
 install: pip install -U tox-travis
 

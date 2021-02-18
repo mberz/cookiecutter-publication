@@ -6,3 +6,4 @@ alabaster==0.7.12
 watchdog
 scons
 git+https://github.com/mberz/nbflow.git@b3b3729bf81d2ede6319ede5c118cdd52571dc8c#egg=nbflow
+pyyaml

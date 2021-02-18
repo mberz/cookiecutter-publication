@@ -7,6 +7,10 @@ dependencies:
   - python={{cookiecutter.python_version}}
   - scons
   - flake8
+  - numpy
+  - scipy
+  - matplotlib
+  - ipython
   - pip:
     - "git+ssh://git@github.com/mberz/nbflow.git@b3b3729bf81d2ede6319ede5c118cdd52571dc8c#egg=nbflow"
     - -e ./utils/

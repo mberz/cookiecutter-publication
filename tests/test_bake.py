@@ -72,6 +72,10 @@ def test_manuscript(cookies):
         assert os.path.exists(
             result.project.join('manuscript').join('manuscript.pdf'))
 
+def test_wo_manuscript(cookies):
+    extra = {"manuscript": "n"}
+    with bake_in_temp_dir(cookies, extra_context=extra) as result:
+        assert os.path.exists(result.project.join('manuscript')) == False
 
 def test_conda_environ(cookies):
     with bake_in_temp_dir(cookies) as result:

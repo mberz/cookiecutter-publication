@@ -72,10 +72,12 @@ def test_manuscript(cookies):
         assert os.path.exists(
             result.project.join('manuscript').join('manuscript.pdf'))
 
+
 def test_wo_manuscript(cookies):
     extra = {"manuscript": "n"}
     with bake_in_temp_dir(cookies, extra_context=extra) as result:
         assert os.path.exists(result.project.join('manuscript')) == False
+
 
 def test_conda_environ(cookies):
     with bake_in_temp_dir(cookies) as result:
@@ -85,6 +87,7 @@ def test_conda_environ(cookies):
             assert decoded['name'] == result.context['publication_slug']
             assert 'python=' + result.context['python_version'] in decoded['dependencies']
             assert decoded['prefix'] == './env/' + result.context['publication_slug']
+
 
 def test_download_templates(cookies):
     extra = {'manuscript': 'JASA'}

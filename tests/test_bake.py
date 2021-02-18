@@ -61,3 +61,23 @@ def test_year_compute_in_license_file(cookies):
         license_file_path = result.project.join('LICENSE')
         now = datetime.datetime.now()
         assert str(now.year) in license_file_path.read()
+
+
+def test_manuscript(cookies):
+    with bake_in_temp_dir(cookies) as result:
+        assert os.path.exists(result.project.join('manuscript'))
+
+        run_inside_dir(
+            'pdflatex manuscript.tex', result.project.join('manuscript'))
+        assert os.path.exists(
+            result.project.join('manuscript').join('manuscript.pdf'))
+
+
+def test_conda_environ(cookies):
+    with bake_in_temp_dir(cookies) as result:
+        fname = result.project.join('environment.yml')
+        with open(fname, 'r') as stream:
+            decoded = yaml.safe_load(stream)
+            assert decoded['name'] == result.context['publication_slug']
+            assert 'python=' + result.context['python_version'] in decoded['dependencies']
+            assert decoded['prefix'] == './env/' + result.context['publication_slug']

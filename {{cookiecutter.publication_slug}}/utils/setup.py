@@ -78,8 +78,8 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
-    cmdclass={
-        'install': CustomInstallCommand,
-        'develop': CustomDevelopCommand
-    }
+    # cmdclass={
+    #     'install': CustomInstallCommand,
+    #     'develop': CustomDevelopCommand
+    # }
 )

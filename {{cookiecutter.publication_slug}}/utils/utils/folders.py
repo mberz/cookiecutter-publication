@@ -11,7 +11,7 @@ def repository_root():
     root : str
         String containing the root directory
     """
-    environ = os.path.abspath(os.environ['CONDA_PREFIX'])
+    environ = os.path.dirname(os.path.abspath(__file__))
     root = os.path.abspath(
         os.path.join(environ, os.pardir, os.pardir))
     return root

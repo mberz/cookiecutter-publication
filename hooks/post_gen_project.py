@@ -76,7 +76,7 @@ if __name__ == '__main__':
             PROJECT_DIRECTORY, 'presentation'))
     else:
         remove_file(os.path.join(
-            PROJECT_DIRECTORY, 'presentation', 'placeholder'))
+            PROJECT_DIRECTORY, 'presentation', 'pres.placeholder'))
 
     if 'Not' in '{{ cookiecutter.code_license }}':
         remove_file('LICENSE')

@@ -74,6 +74,9 @@ if __name__ == '__main__':
             PROJECT_DIRECTORY, 'process', 'presentation'))
         shutil.rmtree(os.path.join(
             PROJECT_DIRECTORY, 'presentation'))
+    else:
+        remove_file(os.path.join(
+            PROJECT_DIRECTORY, 'presentation', 'placeholder'))
 
     if 'Not' in '{{ cookiecutter.code_license }}':
         remove_file('LICENSE')

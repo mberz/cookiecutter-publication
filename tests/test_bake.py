@@ -1,15 +1,9 @@
 from contextlib import contextmanager
 import shlex
 import os
-import sys
 import subprocess
-from types import TracebackType
 import yaml
 import datetime
-from cookiecutter.utils import rmtree
-
-
-import importlib
 
 
 @contextmanager
@@ -104,6 +98,9 @@ def test_with_presentation(cookies):
     extra = {"presentation": "y"}
     with bake_in_temp_dir(cookies, extra_context=extra) as result:
         assert os.path.exists(result.project.join('presentation')) is True
+
+        assert os.path.exists(result.project.join(
+            'presentation', 'pres.placeholder')) is False
 
 
 def test_wo_presentation(cookies):

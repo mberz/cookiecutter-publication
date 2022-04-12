@@ -3,6 +3,7 @@ import shlex
 import os
 import sys
 import subprocess
+from types import TracebackType
 import yaml
 import datetime
 from cookiecutter.utils import rmtree
@@ -97,3 +98,15 @@ def test_download_templates(cookies):
 
         assert os.path.exists(
             result.project.join('manuscript').join('JASA.zip'))
+
+
+def test_with_presentation(cookies):
+    extra = {"presentation": "y"}
+    with bake_in_temp_dir(cookies, extra_context=extra) as result:
+        assert os.path.exists(result.project.join('presentation')) is True
+
+
+def test_wo_presentation(cookies):
+    extra = {"presentation": "n"}
+    with bake_in_temp_dir(cookies, extra_context=extra) as result:
+        assert os.path.exists(result.project.join('presentation')) is False

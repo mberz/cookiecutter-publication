@@ -6,6 +6,7 @@
 
 # virtual environment
 env/
+venv/
 
 # notebook tmp
 .ipynb_checkpoints/
